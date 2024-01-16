@@ -1,5 +1,4 @@
 const { app, BrowserWindow } = require('electron')
-//const bootstrap = require('bootstrap')
 
 const createWindow = () => {
     const win = new BrowserWindow({
