@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- Bootstrap JavaScript -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <div class="container-fluid full-height p-1">
+        <div class="row .em-3 m-3" id="top-container">
+            <div class="col-xl-4">
+                <header class="text-center">
+                    <h1><i class="bi-fire orange"></i> Motion Profiler</h1>
+                </header>
+            </div>
+            <div class="col-xl-8 container-primary">
+                <h2 class="text-center">Directory Source</h2>
+            </div>
+        </div>
+        <div class="row m-2 flex-grow-1">
+            <div class="col-xl-4 p-2 h-100">
+                <div class="container-primary h-100">
+                    Aside
+                </div>
+            </div>
+            <div class="col-xl-8 p-2 h-100">
+                <div class="container-primary h-100">
+                    Content
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
