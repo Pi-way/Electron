@@ -1,25 +1,105 @@
+:root {
+    --container-primary-bg: rgba(255, 255, 255, 0.106);
+    --container-primary-secondary-bg: rgba(255, 255, 255, 0.22);
+    --border-radius: 10px;
+    --body-padding: 20px;
+}
 
-.full-height{
-    display:flex;
+.red {
+    color: red;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.orange {
+    color: orange;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+.bg-blue {
+    background-color: dodgerblue;
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    font-size: xx-large;
+    border-radius: var(--bs-border-radius) !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-paragraph {
+    margin-bottom: 0;
+    margin-top: 8px;
+}
+
+.rounded-border {
+    border-radius: var(--border-radius);
+}
+
+.container-primary {
+    background-color: var(--container-primary-bg);
+}
+
+.em-3 div {
+    height: 3rem;
+}
+
+.flex-button {
+    display: flex;
+    align-items: center;
+}
+
+#top-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0 !important;
+}
+
+#explorer-menu {
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    background-color: var(--container-primary-secondary-bg);
+    width: calc(100% - 2 * var(--border-radius));
+    padding: var(--border-radius);
+    margin: 0 var(--border-radius) var(--border-radius) var(--border-radius);
+    border: solid white 3px;
+    border-top: none;
+    backdrop-filter: blur(7px);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#explorer-view {
+    position: absolute;
+    padding: 0 var(--border-radius) var(--border-radius) var(--border-radius);
+    margin-bottom: var(--border-radius);
+}
+
+.full-height {
+    display: flex;
     flex-direction: column;
     height: min(100vw, 100vh);
 }
 
-.orange{
-    color: orange;    
+#explorer-view::-webkit-scrollbar {
+    width: 20px;
 }
 
-.container-primary{
-    background-color: rgba(255, 255, 255, 0.106);
+#explorer-view::-webkit-scrollbar-track {
+    background-color: var(--container-primary-bg);
     border-radius: 10px;
 }
 
-.em-3 div{
-    height: 3rem;
-}
-
-#top-container{
-    display: flex;
-    align-items: center;
-    margin-bottom: 0 !important;
+#explorer-view::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--container-primary-secondary-bg);
 }

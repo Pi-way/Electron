@@ -1,48 +1,81 @@
 <!DOCTYPE html>
 <html data-bs-theme="dark" lang="eng">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="Content-Security-Policy" content="script-src: 'self' 'unsafe-inline'">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
-
-    <!-- Bootstrap JavaScript -->
+    <!-- Bootstrap -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!-- Assets -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <script src="assets/scripts/templates.js"></script>
+    <script src="assets/scripts/menu.js"></script>
 
     <title>Hello World!</title>
-  </head>
-  <body>
-    <div class="container-fluid full-height p-1">
-        <div class="row .em-3 m-3" id="top-container">
-            <div class="col-xl-4">
-                <header class="text-center">
-                    <h1><i class="bi-fire orange"></i> Motion Profiler</h1>
-                </header>
-            </div>
-            <div class="col-xl-8 container-primary">
-                <h2 class="text-center">Directory Source</h2>
+</head>
+<body>
+
+<template id="fx-icon">
+    <img src="assets/images/fx_icon.png" alt="icon" class="p-1 icon me-2 bg-blue">
+</template>
+<template id="auton-path-icon">
+    <i class="bi-fire bg-orange icon me-2"></i>
+</template>
+<template id="robot-config-icon">
+    <i class="bi-wrench bg-red icon me-2"></i>
+</template>
+
+<template id="file-template">
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="container-fluid row-cols-auto">
+                    <div>
+                        <temp template="fx-icon"></temp>
+                    </div>
+                </div>
+                <p class="card-paragraph">FileName</p>
             </div>
         </div>
-        <div class="row m-2 flex-grow-1">
-            <div class="col-xl-4 p-2">
-                <h2>Create</h2>
-                <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-                    <button type="button" class="btn btn-lg btn-secondary"><i class="bi-fire"></i> New Autonomous Path</button>
-                    <button type="button" class="btn btn-lg btn-secondary"><i class="bi-wrench"></i> New Robot Config</button>
-                    <button type="button" class="btn btn-lg btn-secondary"><img src="assets/images/fx_icon.png" alt="fx" height="30px"> New Function Library</button>
-                </div>
+    </div>
+</template>
+
+<div class="container-fluid full-height p-1">
+    <div class="row .em-3 m-3" id="top-container">
+        <div class="col-xl-4">
+            <header class="text-center">
+                <h1><i class="bi-fire orange"></i> Motion Profiler</h1>
+            </header>
+        </div>
+        <div class="col-xl-8 container-primary rounded-border">
+            <h2 class="text-center">Directory Source</h2>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col-xl-4 p-2">
+            <h2>Create</h2>
+            <div class="btn-group-vertical" id="button-sidebar-create">
+                <button class="btn btn-lg btn-secondary flex-button" type="button"><temp template="auton-path-icon"></temp> New Autonomous Path
+                </button>
+                <button class="btn btn-lg btn-secondary flex-button" type="button"><temp template="robot-config-icon"></temp> New Robot Config
+                </button>
+                <button class="btn btn-lg btn-secondary flex-button" type="button"><temp template="fx-icon"></temp> New Function Library
+                </button>
             </div>
-            <div class="col-xl-8 p-2 h-100">
-                <div class="container-primary h-100">
-                    Content
+        </div>
+        <div class="col-xl-8 p-2">
+            <div class="container-primary rounded-border overflow-x-hidden" id="explorer-view">
+                <div class="rounded-border" id="explorer-menu">
+                    <h4>Explorer menu</h4>
+                </div>
+                <div class="row" id="explorer-view-files">
                 </div>
             </div>
         </div>
     </div>
-  </body>
+</div>
+</body>
 </html>
